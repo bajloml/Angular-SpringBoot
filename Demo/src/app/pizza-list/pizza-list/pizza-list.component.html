@@ -1,0 +1,24 @@
+  <div class="col-md-8 center-block">
+    <div class="table-responsive">
+        <table class="table table-bordered table-striped table-hover mx-auto w-auto">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">Name</th>
+              <th scope="col">Ingredients</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor= "let pizza of pizzaList; let i=index;" (click)="onTableClick(pizza, i);" >
+              <td>{{ pizza.name }}</td>
+              <td>{{ pizza.ingredients }}</td>
+            </tr>
+          </tbody>
+        </table>
+    </div>
+    <div class="row">
+      <div class="col-xs-10">
+        <app-selected-pizza [itemSelected] = "selectedPizza" (updatePizzaListChange) = "updatePizzaList($event)"></app-selected-pizza>
+        <!-- <app-selected-pizza ([itemSelected]) = "selectedPizza"></app-selected-pizza> -->
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,34 @@
+<div class="div">
+
+  <div class="row" [hidden] = "itemSelected.name===''">
+    <hr>
+    <div class="col-md-3">
+      <label for="Name">Selected Pizza:</label>
+      <p>{{itemSelected.name}}</p>
+    </div>
+    <div class="col-md-5">
+      <label for="Name">Ingredients</label>
+      <p>{{itemSelected.ingredients}}</p>
+    </div>
+    <div class="col-md-2 container">
+      <button class="btn btn-light mx-auto d-block" (click)="clickDelete();">Delete</button>
+    </div>
+    <div class="col-md-2 container">
+      <button class="btn btn-light mx-auto d-block" (click)="clickEdit();">Edit</button>
+    </div>
+  </div>
+  <div class="container" [hidden]="hidden">
+    <div class="row">
+      <label for="Name">Name</label>
+      <input class="form-control" type="text" name="Name" [(ngModel)] = "newName">
+    </div>
+    <div class="row">
+      <label for="ingredients">Ingredients</label>
+      <textarea class="form-control span6" rows="3" type="textarea" name="Ingredients" [(ngModel)] = "newIngredients"></textarea>
+    </div>
+    <p></p>
+    <button class = "btn btn-light mx-auto d-block" (click)="clickSubmit();">Submit</button>
+    <hr>
+  </div>
+
+</div>

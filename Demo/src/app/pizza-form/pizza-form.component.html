@@ -1,0 +1,19 @@
+<div class="col-md-10 center-block">
+  <div class="card my-5">
+    <div class="card-body">
+      <form (ngSubmit)="onSubmit()" name="pizzaForm" #pizzaForm="ngForm">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" name="name" class="form-control" placeholder="Enter name" [(ngModel)]="name" >
+        </div>
+        <div class="form-group">
+          <label for="ingredients">Ingredients</label>
+          <textarea type="text" name="ingredients" class="form-control" placeholder="Enter ingredients" [(ngModel)]="ingredients" ></textarea>
+        </div>
+        <button type="submit" [disabled]="!pizzaForm.form.valid || name === '' || ingredients === ''"
+          class="btn btn-info">Submit</button>
+      </form>
+    </div>
+  </div>
+</div>
+
